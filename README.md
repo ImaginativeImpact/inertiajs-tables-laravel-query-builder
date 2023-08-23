@@ -184,6 +184,7 @@ class UserIndexController
                   'en' => 'English',
                   'nl' => 'Dutch',
               ]);
+        });
     }
 }
 ```

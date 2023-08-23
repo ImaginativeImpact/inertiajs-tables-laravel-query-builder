@@ -208,7 +208,7 @@ import forEach from "lodash-es/forEach";
 import isEqual from "lodash-es/isEqual";
 import map from "lodash-es/map";
 import pickBy from "lodash-es/pickBy";
-import {get} from "lodash-es";
+import { get } from "lodash-es";
 
 const props = defineProps({
     inertia: {

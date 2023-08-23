@@ -5,8 +5,8 @@ namespace App\Http;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Support\Collection;
-use Inertia\Inertia;
 use ImaginativeImpact\LaravelQueryBuilderInertiaJs\InertiaTable;
+use Inertia\Inertia;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 

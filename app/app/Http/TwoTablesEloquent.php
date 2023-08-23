@@ -4,8 +4,8 @@ namespace App\Http;
 
 use App\Models\Company;
 use App\Models\User;
-use Inertia\Inertia;
 use ImaginativeImpact\LaravelQueryBuilderInertiaJs\InertiaTable;
+use Inertia\Inertia;
 
 class TwoTablesEloquent
 {

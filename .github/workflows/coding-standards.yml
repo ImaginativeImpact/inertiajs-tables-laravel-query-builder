@@ -1,5 +1,8 @@
 name: "Coding Standards"
 on: [push]
+
+permissions: write-all
+
 jobs:
   coding-standards:
     runs-on: ubuntu-latest

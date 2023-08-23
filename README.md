@@ -378,7 +378,9 @@ setTranslations({
   per_page: "per page",
   previous: "Previous",
   results: "results",
-  to: "to"
+  to: "to",
+  reset: "Reset",
+  search: "Search..."
 });
 ```
 

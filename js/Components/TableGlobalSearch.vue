@@ -26,11 +26,16 @@
   </div>
 </template>
 
+<script>
+import { getTranslations } from "../translations.js";
+const translations = getTranslations();
+</script>
+
 <script setup>
 defineProps({
     label: {
         type: String,
-        default: "Search...",
+        default: translations.search,
         required: false,
     },
 

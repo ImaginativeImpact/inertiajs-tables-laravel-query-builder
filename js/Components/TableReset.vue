@@ -19,11 +19,15 @@
         clip-rule="evenodd"
       />
     </svg>
-    <span>Reset</span>
+    <span>{{ translations.reset }}</span>
   </button>
 </template>
 
 <script setup>
+import { getTranslations } from "../translations.js";
+
+const translations = getTranslations();
+
 defineProps({
     onClick: {
         type: Function,

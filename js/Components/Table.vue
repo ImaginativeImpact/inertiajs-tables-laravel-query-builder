@@ -158,7 +158,7 @@
                         :name="`cell(${column.key})`"
                         :item="item"
                       >
-                        {{ item[column.key] }}
+                        {{ get(item, column.key) }}
                       </slot>
                     </td>
                   </tr>
@@ -208,6 +208,7 @@ import forEach from "lodash-es/forEach";
 import isEqual from "lodash-es/isEqual";
 import map from "lodash-es/map";
 import pickBy from "lodash-es/pickBy";
+import {get} from "lodash-es";
 
 const props = defineProps({
     inertia: {

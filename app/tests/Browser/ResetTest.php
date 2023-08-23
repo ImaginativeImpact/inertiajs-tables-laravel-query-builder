@@ -61,8 +61,8 @@ class ResetTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             User::first()->forceFill([
-                'name'  => 'Pascal Baljet',
-                'email' => 'pascal@protone.media',
+                'name'  => 'Imaginative Impact',
+                'email' => 'hi@imaginativeimpact.com',
             ])->save();
 
             $users = User::query()
@@ -75,11 +75,11 @@ class ResetTest extends DuskTestCase
                 // First user
                 ->assertSeeIn('tr:first-child td:nth-child(1)', $users->get(0)->name)
                 ->assertMissing('@reset-table')
-                ->assertDontSee('Pascal Baljet')
-                ->type('global', 'Pascal Baljet')
-                ->waitForText('pascal@protone.media')
+                ->assertDontSee('Imaginative Impact')
+                ->type('global', 'Imaginative Impact')
+                ->waitForText('hi@imaginativeimpact.com')
                 ->press('@reset-table')
-                ->waitUntilMissingText('pascal@protone.media');
+                ->waitUntilMissingText('hi@imaginativeimpact.com');
         });
     }
 
@@ -88,8 +88,8 @@ class ResetTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             User::first()->forceFill([
-                'name'  => 'Pascal Baljet',
-                'email' => 'pascal@protone.media',
+                'name'  => 'Imaginative Impact',
+                'email' => 'hi@imaginativeimpact.com',
             ])->save();
 
             $users = User::query()
@@ -102,13 +102,13 @@ class ResetTest extends DuskTestCase
                 // First user
                 ->assertSeeIn('tr:first-child td:nth-child(1)', $users->get(0)->name)
                 ->assertMissing('@reset-table')
-                ->assertDontSee('Pascal Baljet')
+                ->assertDontSee('Imaginative Impact')
                 ->press('@add-search-row-dropdown')
                 ->press('@add-search-row-name')
-                ->type('name', 'Pascal Baljet')
-                ->waitForText('pascal@protone.media')
+                ->type('name', 'Imaginative Impact')
+                ->waitForText('hi@imaginativeimpact.com')
                 ->press('@reset-table')
-                ->waitUntilMissingText('pascal@protone.media');
+                ->waitUntilMissingText('hi@imaginativeimpact.com');
         });
     }
 

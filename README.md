@@ -6,21 +6,9 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![run-tests](https://github.com/imaginativeimpact/inertiajs-tables-laravel-query-builder/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/imaginativeimpact/inertiajs-tables-laravel-query-builder/actions/workflows/php.yml)
 
-## [⚠️ Don't start using this package for new projects ⚠️](https://github.com/imaginativeimpact/inertiajs-tables-laravel-query-builder/issues/122)
-
 This package provides a *DataTables-like* experience for [Inertia.js](https://inertiajs.com/) with support for searching, filtering, sorting, toggling columns, and pagination. It generates URLs that can be consumed by Spatie's excellent [Laravel Query Builder](https://github.com/spatie/laravel-query-builder) package, with no additional logic needed. The components are styled with [Tailwind CSS 3.0](https://tailwindcss.com/), but it's fully customizable with slots. The data refresh logic is based on Inertia's [Ping CRM demo](https://github.com/inertiajs/pingcrm).
 
 ![Inertia.js Table for Laravel Query Builder](https://user-images.githubusercontent.com/8403149/177773377-86c32d69-8f86-47e4-8063-ea227e480d10.mp4)
-
-## Support this package!
-
-❤️ We proudly support the community by developing Laravel packages and giving them away for free. If this package saves you time or if you're relying on it professionally, please consider [sponsoring the maintenance and development](https://github.com/sponsors/pascalbaljet). Keeping track of issues and pull requests takes time, but we're happy to help!
-
-## Laravel Splade
-
-**Did you hear about Laravel Splade? 🤩**
-
-It's the *magic* of Inertia.js with the *simplicity* of Blade. [Splade](https://github.com/imaginativeimpact/laravel-splade) provides a super easy way to build Single Page Applications using Blade templates. Besides that magic SPA-feeling, it comes with more than ten components to sparkle your app and make it interactive, all without ever leaving Blade.
 
 ## Features
 
@@ -36,12 +24,10 @@ It's the *magic* of Inertia.js with the *simplicity* of Blade. [Splade](https://
 ## Compatibility
 
 * [Vue 3](https://v3.vuejs.org/guide/installation.html)
-* [Laravel 9](https://laravel.com/)
+* [Laravel 9+](https://laravel.com/)
 * [Inertia.js](https://inertiajs.com/)
 * [Tailwind CSS v3](https://tailwindcss.com/) + [Forms plugin](https://github.com/tailwindlabs/tailwindcss-forms)
 * PHP 8.0+
-
-**Note**: There is currently an [issue](https://github.com/imaginativeimpact/inertiajs-tables-laravel-query-builder/issues/69) with using this package with Vite!
 
 ## Installation
 
@@ -282,12 +268,12 @@ The `Table` has some additional properties to tweak its front-end behaviour.
 </template>
 ```
 
-| Property | Description | Default |
-| --- | --- | --- |
-| striped | Adds a *striped* layout to the table. | `false` |
-| preventOverlappingRequests | Cancels a previous visit on new user input to prevent an inconsistent state. | `true` |
-| inputDebounceMs | Number of ms to wait before refreshing the table on user input. | 350 |
-| preserveScroll | Configures the [Scroll preservation](https://inertiajs.com/scroll-management#scroll-preservation) behavior. You may also pass `table-top` to this property to scroll to the top of the table on new data. | false |
+| Property                   | Description                                                                                                                                                                                               | Default |
+|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| striped                    | Adds a *striped* layout to the table.                                                                                                                                                                     | `false` |
+| preventOverlappingRequests | Cancels a previous visit on new user input to prevent an inconsistent state.                                                                                                                              | `true`  |
+| inputDebounceMs            | Number of ms to wait before refreshing the table on user input.                                                                                                                                           | 350     |
+| preserveScroll             | Configures the [Scroll preservation](https://inertiajs.com/scroll-management#scroll-preservation) behavior. You may also pass `table-top` to this property to scroll to the top of the table on new data. | false   |
 
 #### Custom column cells
 
@@ -400,19 +386,19 @@ setTranslations({
 
 The `Table.vue` has several slots that you can use to inject your own implementations.
 
-| Slot | Description |
-| --- | --- |
-| tableFilter | The location of the button + dropdown to select filters. |
-| tableGlobalSearch | The location of the input element that handles the global search. |
-| tableReset | The location of the button that resets the table. |
-| tableAddSearchRow | The location of the button + dropdown to add additional search rows. |
-| tableColumns | The location of the button + dropdown to toggle columns. |
-| tableSearchRows | The location of the input elements that handle the additional search rows. |
-| tableWrapper | The component that *wraps* the table element, handling overflow, shadow, padding, etc. |
-| table | The actual table element. |
-| head | The location of the table header. |
-| body | The location of the table body.  |
-| pagination | The location of the paginator. |
+| Slot              | Description                                                                            |
+|-------------------|----------------------------------------------------------------------------------------|
+| tableFilter       | The location of the button + dropdown to select filters.                               |
+| tableGlobalSearch | The location of the input element that handles the global search.                      |
+| tableReset        | The location of the button that resets the table.                                      |
+| tableAddSearchRow | The location of the button + dropdown to add additional search rows.                   |
+| tableColumns      | The location of the button + dropdown to toggle columns.                               |
+| tableSearchRows   | The location of the input elements that handle the additional search rows.             |
+| tableWrapper      | The component that *wraps* the table element, handling overflow, shadow, padding, etc. |
+| table             | The actual table element.                                                              |
+| head              | The location of the table header.                                                      |
+| body              | The location of the table body.                                                        |
+| pagination        | The location of the paginator.                                                         |
 
 Each slot is provided with props to interact with the parent `Table` component.
 
@@ -438,7 +424,7 @@ cd app
 cp .env.example .env
 composer install
 npm install
-npm run production
+npm run build
 touch database/database.sqlite
 php artisan migrate:fresh --seed
 php artisan dusk:chrome-driver
@@ -481,28 +467,14 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## Other Laravel packages
-
-* [`Laravel Analytics Event Tracking`](https://github.com/imaginativeimpact/laravel-analytics-event-tracking): Laravel package to easily send events to Google Analytics.
-* [`Laravel Blade On Demand`](https://github.com/imaginativeimpact/laravel-blade-on-demand): Laravel package to compile Blade templates in memory.
-* [`Laravel Cross Eloquent Search`](https://github.com/imaginativeimpact/laravel-cross-eloquent-search): Laravel package to search through multiple Eloquent models.
-* [`Laravel Eloquent Scope as Select`](https://github.com/imaginativeimpact/laravel-eloquent-scope-as-select): Stop duplicating your Eloquent query scopes and constraints in PHP. This package lets you re-use your query scopes and constraints by adding them as a subquery.
-* [`Laravel Eloquent Where Not`](https://github.com/imaginativeimpact/laravel-eloquent-where-not): This Laravel package allows you to flip/invert an Eloquent scope, or really any query constraint.
-* [`Laravel FFMpeg`](https://github.com/imaginativeimpact/laravel-ffmpeg): This package provides an integration with FFmpeg for Laravel. The storage of the files is handled by Laravel's Filesystem.
-* [`Laravel Form Components`](https://github.com/imaginativeimpact/laravel-form-components): Blade components to rapidly build forms with Tailwind CSS Custom Forms and Bootstrap 4. Supports validation, model binding, default values, translations, includes default vendor styling and fully customizable!
-* [`Laravel Mixins`](https://github.com/imaginativeimpact/laravel-mixins): A collection of Laravel goodies.
-* [`Laravel Verify New Email`](https://github.com/imaginativeimpact/laravel-verify-new-email): This package adds support for verifying new email addresses: when a user updates its email address, it won't replace the old one until the new one is verified.
-* [`Laravel Paddle`](https://github.com/imaginativeimpact/laravel-paddle): Paddle.com API integration for Laravel with support for webhooks/events.
-* [`Laravel WebDAV`](https://github.com/imaginativeimpact/laravel-webdav): WebDAV driver for Laravel's Filesystem.
-
 ## Security
 
-If you discover any security related issues, please email pascal@protone.media instead of using the issue tracker.
+If you discover any security related issues, please email hi@imaginativeimpact.com instead of using the issue tracker.
 
 ## Credits
 
+- [Mike Bowyer](https://github.com/mchlbwyr)
 - [Pascal Baljet](https://github.com/imaginativeimpact)
-- [All Contributors](../../contributors)
 
 ## License
 

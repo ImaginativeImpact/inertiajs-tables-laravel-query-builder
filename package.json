@@ -1,6 +1,6 @@
 {
   "name": "@imaginativeimpact/inertiajs-tables-laravel-query-builder",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Inertia.js Front-end Components for Spatie's Laravel Query Builder",
   "private": false,
   "author": "ImaginativeImpact <hi@imaginativeimpact.com>",

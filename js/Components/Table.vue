@@ -688,6 +688,6 @@ function header(key) {
 }
 
 function rowClick(item, key) {
-  emit("rowClick", item, key);
+    emit("rowClick", item, key);
 }
 </script>

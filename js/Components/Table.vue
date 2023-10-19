@@ -153,6 +153,7 @@
                       v-show="show(column.key)"
                       :key="`table-${name}-row-${key}-column-${column.key}`"
                       class="text-sm py-4 px-6 text-gray-500 whitespace-nowrap"
+                      @click="rowClick(item, key)"
                     >
                       <slot
                         :name="`cell(${column.key})`"
@@ -273,6 +274,8 @@ const props = defineProps({
         required: false,
     },
 });
+
+const emit = defineEmits(["rowClick"]);
 
 const app = getCurrentInstance();
 const $inertia = app ? app.appContext.config.globalProperties.$inertia : props.inertia;
@@ -682,5 +685,9 @@ function header(key) {
     columnData.onSort = sortBy;
 
     return columnData;
+}
+
+function rowClick(item, key) {
+  emit("rowClick", item, key);
 }
 </script>
